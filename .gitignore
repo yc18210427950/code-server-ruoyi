@@ -1,0 +1,9 @@
+data/code-server/.local
+data/code-server/.java
+data/code-server/.m2
+data/code-server/.npm
+data/code-server/.yarn
+data/mysql
+data/redis
+
+data/code-server/workspace/RuoYi-Vue/*.jar

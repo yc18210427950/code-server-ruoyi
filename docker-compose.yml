@@ -1,0 +1,79 @@
+version: "3.0"
+services:
+  ccsr-code-server:
+    container_name: csr-code-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+      - PASSWORD=12345678
+      - SUDO_PASSWORD=12345678
+      - DEFAULT_WORKSPACE=/config/workspace
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 34731:8443
+      - 34732:3000
+      - 34733:8080
+    restart: always
+    volumes:
+      - ./data/code-server:/config
+
+  ccsr-nginx:
+    image: bitnami/nginx:latest
+    container_name: ccsr-nginx
+    ports:
+      - "34738:8080"
+      # - "60011:8443"
+    volumes:
+      # - ./html:/app
+      - ./my_server_block.conf:/opt/bitnami/nginx/conf/server_blocks/my_server_block.conf:ro
+    restart: always
+
+  csr-mysql:
+    image: mysql
+    restart: always
+    container_name: csr-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678
+      MYSQL_DATABASE: ruoyi
+      TZ: Asia/Shanghai
+    # ports:
+    #   - 34734:3306
+    volumes:
+      - ./data/mysql:/var/lib/mysql:rw
+      # - ./config/mysql82/my.cnf:/etc/mysql/my.cnf
+      # - ./sql/:/docker-entrypoint-initdb.d
+
+  csr-phpmyadmin:
+    image: phpmyadmin
+    container_name: csr-phpmyadmin
+    ports:
+      - '34735:80'
+    environment:
+      # MYSQL_USER: "root"
+      # MYSQL_PASSWORD: "12345678"
+      MYSQL_ROOT_PASSWORD: "12345678"
+      PMA_HOSTS: csr-mysql
+      PMA_PORTS: 3306
+    #   - PMA_ARBITRARY=1
+    restart: always
+
+  csr-redis:
+    container_name: csr-redis
+    image: redis:alpine
+    restart: always
+    # ports:
+    #   - "34736:6379"
+    volumes:
+      - ./data/redis/:/data/
+
+  csr-redis-commander:
+    container_name: csr-redis-commander
+    image: rediscommander/redis-commander:latest
+    restart: always
+    environment:
+      - REDIS_HOSTS=local:csr-redis:6379
+    ports:
+      - "34737:8081"

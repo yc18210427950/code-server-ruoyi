@@ -1,0 +1,25 @@
+2024-01-28 14:21:08.605 [info] 
+
+
+
+
+2024-01-28 14:21:08.606 [info] Extension host agent started.
+2024-01-28 14:21:08.608 [info] Started initializing default profile extensions in extensions installation folder. file:///config/extensions
+2024-01-28 14:21:08.651 [info] Completed initializing default profile extensions in extensions installation folder. file:///config/extensions
+2024-01-28 14:21:18.596 [info] [192.168.65.1][79854398][ManagementConnection] New connection established.
+2024-01-28 14:21:19.611 [info] [192.168.65.1][f0acfda8][ExtensionHostConnection] New connection established.
+2024-01-28 14:21:19.989 [info] [192.168.65.1][f0acfda8][ExtensionHostConnection] <1151> Launched Extension Host Process.
+2024-01-28 14:21:32.577 [info] Getting Manifest... ms-ceintl.vscode-language-pack-zh-hans
+2024-01-28 14:21:34.894 [info] Installing extension: ms-ceintl.vscode-language-pack-zh-hans
+2024-01-28 14:21:40.656 [info] Extension signature verification is not done: ms-ceintl.vscode-language-pack-zh-hans
+2024-01-28 14:21:41.227 [info] Extracted extension to file:///config/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.85.0-universal: ms-ceintl.vscode-language-pack-zh-hans
+2024-01-28 14:21:41.244 [info] Renamed to /config/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.85.0-universal
+2024-01-28 14:21:41.259 [info] Extracting extension completed. ms-ceintl.vscode-language-pack-zh-hans
+2024-01-28 14:21:41.274 [info] Adding language packs from the extension ms-ceintl.vscode-language-pack-zh-hans
+2024-01-28 14:21:41.586 [info] Extension installed successfully: ms-ceintl.vscode-language-pack-zh-hans
+2024-01-28 14:22:41.066 [info] [192.168.65.1][79854398][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2024-01-28 14:22:41.204 [info] [192.168.65.1][f0acfda8][ExtensionHostConnection] <1151> Extension Host Process exited with code: 0, signal: null.
+2024-01-28 14:22:44.160 [info] [192.168.65.1][88a9b186][ManagementConnection] New connection established.
+2024-01-28 14:22:44.961 [info] [192.168.65.1][6b8ce783][ExtensionHostConnection] New connection established.
+2024-01-28 14:22:44.981 [info] [192.168.65.1][6b8ce783][ExtensionHostConnection] <2475> Launched Extension Host Process.
+2024-01-28 14:36:57.974 [warning] [File Watcher (node.js)] Watcher shutdown because watched path got deleted
